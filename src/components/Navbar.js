@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { usePortfolio } from "../context/PortfolioContext";
 
 const Navbar = () => {
+  const { navLinks, personalInfo } = usePortfolio();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -12,17 +14,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-    { name: "WordPress Sites", href: "#wordpress-sites" },
-    { name: "Education", href: "#education" },
-    { name: "Contact", href: "#contact" },
-  ];
-
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -31,7 +22,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <a href="#home" className="text-2xl font-bold text-primary">
-            Chetan Shinde
+            {personalInfo.name.split(" ")[0]} {personalInfo.name.split(" ")[2]}
           </a>
 
           {/* Desktop Menu */}

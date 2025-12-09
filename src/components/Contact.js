@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { usePortfolio } from "../context/PortfolioContext";
 
 const Contact = () => {
+  const { personalInfo } = usePortfolio();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,9 +20,9 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Create mailto link
-    const mailtoLink = `mailto:chetanshinde265@gmail.com?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:${
+      personalInfo.email
+    }?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     )}`;
     window.location.href = mailtoLink;
@@ -43,8 +45,8 @@ const Contact = () => {
         </svg>
       ),
       title: "Email",
-      value: "chetanshinde265@gmail.com",
-      link: "mailto:chetanshinde265@gmail.com",
+      value: personalInfo.email,
+      link: `mailto:${personalInfo.email}`,
     },
     {
       icon: (

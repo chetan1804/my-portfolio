@@ -1,67 +1,8 @@
 import React from "react";
+import { usePortfolio } from "../context/PortfolioContext";
 
 const Education = () => {
-  const education = [
-    {
-      degree: "Bachelor's Degree in Computer Science",
-      year: "2014",
-      type: "Graduation",
-      icon: "🎓",
-    },
-    {
-      degree: "Higher Secondary Certificate (HSC) - Science",
-      year: "2011",
-      type: "HSC",
-      icon: "📚",
-    },
-    {
-      degree: "Secondary School Certificate (SSC)",
-      year: "2009",
-      type: "SSC",
-      icon: "📖",
-    },
-  ];
-
-  const certifications = [
-    {
-      name: "Namaste React.js",
-      issuer: "by Akshay Saini",
-      description:
-        "Comprehensive React.js course covering modern React concepts, hooks, performance optimization, and best practices",
-      icon: "⚛️",
-      color: "from-blue-50 to-blue-100",
-    },
-    {
-      name: "Namaste JavaScript",
-      issuer: "by Akshay Saini",
-      description:
-        "Deep dive into JavaScript fundamentals, closures, async programming, and advanced concepts",
-      icon: "🟨",
-      color: "from-yellow-50 to-yellow-100",
-    },
-    {
-      name: "C, C++ Programming",
-      issuer: "Professional Certification",
-      description:
-        "Core programming concepts and object-oriented programming principles",
-      icon: "💻",
-      color: "from-purple-50 to-purple-100",
-    },
-    {
-      name: "Java Programming",
-      issuer: "Professional Certification",
-      description: "Java programming fundamentals and application development",
-      icon: "☕",
-      color: "from-orange-50 to-orange-100",
-    },
-    {
-      name: "SQL Database",
-      issuer: "Professional Certification",
-      description: "Database design, queries, and management with SQL",
-      icon: "🗄️",
-      color: "from-green-50 to-green-100",
-    },
-  ];
+  const { education, certifications } = usePortfolio();
 
   return (
     <section id="education" className="section-container bg-white">

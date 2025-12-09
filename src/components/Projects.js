@@ -1,85 +1,9 @@
 import React, { useState } from "react";
+import { usePortfolio } from "../context/PortfolioContext";
 
 const Projects = () => {
+  const { projects } = usePortfolio();
   const [activeFilter, setActiveFilter] = useState("all");
-
-  const projects = [
-    {
-      title: "Product Dashboard",
-      category: "react",
-      tech: ["React.js", "Redux", "Vite", "React Router"],
-      description:
-        "Modern React-based admin dashboard for managing multi-store e-commerce operations. Built with Vite, React 18, Redux Toolkit, and React Router, providing comprehensive interface for products, orders, inventory, customers, and analytics.",
-      features: [
-        "Multi-store management",
-        "Product & inventory control",
-        "Order processing system",
-        "Customer management",
-        "Real-time analytics dashboard",
-      ],
-    },
-    {
-      title: "CDE Platform",
-      category: "react",
-      tech: ["React.js", "REST API", "Frontend Engineering"],
-      description:
-        "Front-end engineering project for CDE platform with client profile management and promotions module.",
-      features: [
-        "Client profile creation and updates",
-        "Promotions module for all clients",
-        "Blogs section implementation",
-        "Uptime monitoring features",
-        "NFA client management",
-        "Seamless API integration",
-      ],
-    },
-    {
-      title: "MM Product Listing Plugin",
-      category: "wordpress",
-      tech: ["WordPress", "React.js", "PHP", "REST API"],
-      description:
-        "Custom WordPress plugin using React.js to handle large-scale flooring product data for enterprise clients. Reduced load time from 20+ seconds to 3-5 seconds.",
-      features: [
-        "Handle 100K+ products per site",
-        "High-performance product listing",
-        "Advanced filtering system",
-        "Category-wise product display",
-        "Dynamic product sliders",
-        "Deployed on 360+ websites",
-      ],
-      highlight: "Performance optimization reduced load time by 85%",
-    },
-    {
-      title: "MangoShare",
-      category: "react",
-      tech: ["React.js", "File Encryption", "Security"],
-      description:
-        "Secure file-sharing platform for accountants combining portal-level security with email accessibility.",
-      features: [
-        "Encrypted file transfers",
-        "Role-based access control",
-        "Audit tracking system",
-        "Compliance with data protection",
-        "Optimized upload/download",
-        "Enterprise-grade security",
-      ],
-    },
-    {
-      title: "WordPress Multisite Management",
-      category: "wordpress",
-      tech: ["WordPress Multisite", "PHP", "Custom Plugins", "REST API"],
-      description:
-        "Managed 400+ WordPress websites for enterprise client with high-volume product catalogs and centralized management system.",
-      features: [
-        "Manage 400+ WordPress sites",
-        "Centralized product management",
-        "Custom API integrations",
-        "Automated workflows",
-        "Social media integrations",
-        "Performance optimization",
-      ],
-    },
-  ];
 
   const filters = [
     { label: "All Projects", value: "all" },

@@ -1,6 +1,9 @@
 import React from "react";
+import { usePortfolio } from "../context/PortfolioContext";
 
 const Hero = () => {
+  const { personalInfo, heroStats } = usePortfolio();
+
   return (
     <section
       id="home"
@@ -8,16 +11,16 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-            Hi, I'm <span className="text-primary">Chetan Prakash Shinde</span>
+            Hi, I'm <span className="text-primary">{personalInfo.name}</span>
           </h1>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-700 mb-8">
-            Senior Software Engineer
+            {personalInfo.title}
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto">
-            React.js Developer | Full Stack Engineer
+            {personalInfo.subtitle}
           </p>
           <p className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto">
-            10+ years of experience building scalable web applications
+            {personalInfo.experience}
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -28,7 +31,7 @@ const Hero = () => {
               View Projects
             </a>
             <a
-              href="https://www.linkedin.com/in/chetan-shinde-8695827a/"
+              href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary">
@@ -37,20 +40,17 @@ const Hero = () => {
           </div>
 
           <div className="flex justify-center items-center gap-8 text-gray-600">
-            <div className="text-center">
-              <p className="text-3xl font-bold text-primary">10+</p>
-              <p className="text-sm">Years Experience</p>
-            </div>
-            <div className="h-12 w-px bg-gray-300"></div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-primary">400+</p>
-              <p className="text-sm">Websites Managed</p>
-            </div>
-            <div className="h-12 w-px bg-gray-300"></div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-primary">4+</p>
-              <p className="text-sm">Years React.js</p>
-            </div>
+            {heroStats.map((stat, index) => (
+              <React.Fragment key={stat.label}>
+                {index > 0 && <div className="h-12 w-px bg-gray-300"></div>}
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-primary">
+                    {stat.value}
+                  </p>
+                  <p className="text-sm">{stat.label}</p>
+                </div>
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>

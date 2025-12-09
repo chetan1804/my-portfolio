@@ -1,40 +1,8 @@
 import React from "react";
+import { usePortfolio } from "../context/PortfolioContext";
 
 const Experience = () => {
-  const experiences = [
-    {
-      company: "CanWill Technologies Pvt. Ltd.",
-      position: "Senior Software Engineer",
-      duration: "Nov 2018 – Present (7+ Years)",
-      location: "Pune, India",
-      type: "Full-time",
-      highlights: [
-        "4 years of experience in React.js (front-end development, performance optimization, reusable components, API integration)",
-        "3 years of experience in WordPress (custom plugins, multisite setup, theme development, product management, API-based workflows)",
-        "Managed and maintained 400+ WordPress websites for a large enterprise client with high-volume product catalogs",
-        "Handled 1 lakh+ flooring products per site, ensuring accurate listing, filtering, and product data consistency",
-        "Developed a custom WordPress plugin connected with APIs to dynamically manage sites, products, categories, and promotions",
-        "Identified major performance bottlenecks in WordPress product listing (20+ seconds load time); built a React.js-based plugin reducing load time to 3–5 seconds",
-        "Engineered React components for fast product listings, product detail pages, and product sliders optimized for large datasets",
-        "Worked on multiple WordPress multisite environments, handling shared components, centralized data, and domain-specific configurations",
-        "Implemented integrations for social media review sharing and automated content workflows",
-        "Collaborated with backend and QA teams to deliver stable, scalable, and high-performing WordPress + React solutions",
-      ],
-    },
-    {
-      company: "Mulika Infotech Pvt. Ltd.",
-      position: "Software Engineer",
-      duration: "Oct 2015 – Oct 2018 (3 Years)",
-      location: "Pune, India",
-      type: "Full-time",
-      highlights: [
-        "Converted PSD and design mockups into fully responsive, pixel-perfect websites using HTML, CSS, JavaScript, and PHP",
-        "Built custom WordPress themes and templates aligned with client design requirements",
-        "Ensured cross-browser compatibility, mobile responsiveness, and performance optimization across all delivered websites",
-        "Worked closely with designers and project managers to deliver high-quality front-end interfaces on time",
-      ],
-    },
-  ];
+  const { experience: experiences } = usePortfolio();
 
   return (
     <section id="experience" className="section-container bg-white">

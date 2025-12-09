@@ -1,6 +1,9 @@
 import React from "react";
+import { usePortfolio } from "../context/PortfolioContext";
 
 const About = () => {
+  const { about, personalInfo } = usePortfolio();
+
   return (
     <section id="about" className="section-container bg-white">
       <h2 className="section-title text-gray-900">
@@ -13,37 +16,19 @@ const About = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Professional Summary
             </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Software Developer with{" "}
-              <strong>10 years of professional experience</strong>, including
-              <strong> 4 years as a React.js Developer</strong> and{" "}
-              <strong>6 years in PHP & WordPress development</strong>.
-            </p>
+            <p className="text-gray-600 leading-relaxed">{about.summary}</p>
             <p className="text-gray-600 leading-relaxed mt-4">
-              Strong expertise in building scalable front-end applications,
-              custom WordPress systems, REST API integrations, and responsive
-              UI/UX solutions. Experienced in product-based development,
-              optimization, and modern JavaScript best practices.
+              {about.description}
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="card">
-              <p className="text-sm text-gray-500">Experience</p>
-              <p className="text-2xl font-bold text-primary">10+ Years</p>
-            </div>
-            <div className="card">
-              <p className="text-sm text-gray-500">React.js</p>
-              <p className="text-2xl font-bold text-primary">4 Years</p>
-            </div>
-            <div className="card">
-              <p className="text-sm text-gray-500">WordPress</p>
-              <p className="text-2xl font-bold text-primary">6 Years</p>
-            </div>
-            <div className="card">
-              <p className="text-sm text-gray-500">Sites Managed</p>
-              <p className="text-2xl font-bold text-primary">400+</p>
-            </div>
+            {about.stats.map((stat, index) => (
+              <div key={index} className="card">
+                <p className="text-sm text-gray-500">{stat.label}</p>
+                <p className="text-2xl font-bold text-primary">{stat.value}</p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -66,18 +51,18 @@ const About = () => {
             </h3>
             <div className="space-y-3 text-gray-600">
               <p>
-                <strong>Name:</strong> Chetan Prakash Shinde
+                <strong>Name:</strong> {personalInfo.name}
               </p>
               <p>
-                <strong>Location:</strong> Pune, India
+                <strong>Location:</strong> {personalInfo.location}
               </p>
               <p>
-                <strong>Availability:</strong> Open to worldwide remote roles
+                <strong>Availability:</strong> {personalInfo.availability}
               </p>
               <p>
                 <strong>Email:</strong>{" "}
                 <a
-                  href="mailto:chetanshinde265@gmail.com"
+                  href={`mailto:${personalInfo.email}`}
                   className="text-primary hover:underline">
                   chetanshinde265@gmail.com
                 </a>
@@ -98,60 +83,21 @@ const About = () => {
               Key Achievements
             </h3>
             <ul className="space-y-2 text-gray-600">
-              <li className="flex items-start">
-                <svg
-                  className="w-5 h-5 text-primary mr-2 mt-1 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                Optimized WordPress product listing from 20+ seconds to 3-5
-                seconds
-              </li>
-              <li className="flex items-start">
-                <svg
-                  className="w-5 h-5 text-primary mr-2 mt-1 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                Managed 400+ WordPress websites with 1 lakh+ products per site
-              </li>
-              <li className="flex items-start">
-                <svg
-                  className="w-5 h-5 text-primary mr-2 mt-1 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                Built custom React.js plugins for high-performance product
-                management
-              </li>
-              <li className="flex items-start">
-                <svg
-                  className="w-5 h-5 text-primary mr-2 mt-1 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                Deployed solutions across 360+ client websites
-              </li>
+              {about.achievements.map((achievement, index) => (
+                <li key={index} className="flex items-start">
+                  <svg
+                    className="w-5 h-5 text-primary mr-2 mt-1 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  {achievement}
+                </li>
+              ))}
             </ul>
           </div>
         </div>

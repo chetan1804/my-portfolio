@@ -1,4 +1,5 @@
 import React from "react";
+import { PortfolioProvider } from "./context/PortfolioContext";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -13,18 +14,20 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <WordPressSites />
-      <Education />
-      <Contact />
-      <Footer />
-    </div>
+    <PortfolioProvider>
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <WordPressSites />
+        <Education />
+        <Contact />
+        <Footer />
+      </div>
+    </PortfolioProvider>
   );
 }
 
