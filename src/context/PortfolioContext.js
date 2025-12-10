@@ -88,7 +88,7 @@ export const PortfolioProvider = ({ children }) => {
       },
       {
         title: "Database",
-        skills: ["MongoDB", "MySQL", "SQL", "Database Design"],
+        skills: ["MongoDB", "MySQL", "SQL", "GraphQL", "Database Design"],
       },
       {
         title: "Tools & Others",
@@ -270,6 +270,14 @@ export const PortfolioProvider = ({ children }) => {
         description:
           "Deep dive into JavaScript fundamentals, closures, async programming, and advanced concepts",
         icon: "🟨",
+        color: "from-yellow-50 to-yellow-100",
+      },
+      {
+        name: "Prompt Engineering",
+        issuer: "by SimpliLearn",
+        description:
+          "AI prompt design and optimization techniques for effective AI interactions and outputs",
+        icon: "🤖",
         color: "from-yellow-50 to-yellow-100",
       },
       {
