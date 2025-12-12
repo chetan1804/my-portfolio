@@ -10,7 +10,7 @@ const Education = () => {
         Education & <span className="text-primary">Certifications</span>
       </h2>
 
-      <div className="grid lg:grid-cols-2 gap-12">
+      <div className="grid lg:grid-cols-1 gap-12">
         {/* Education Section */}
         <div>
           <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center">
@@ -66,7 +66,7 @@ const Education = () => {
           </div>
 
           {/* Location Info */}
-          <div className="mt-8 card bg-gradient-to-br from-blue-50 to-purple-50">
+          {/* <div className="mt-8 card bg-gradient-to-br from-blue-50 to-purple-50">
             <div className="flex items-start">
               <svg
                 className="w-6 h-6 text-primary mr-3 mt-1"
@@ -92,7 +92,7 @@ const Education = () => {
                 <p className="text-gray-600">State: Maharashtra, India</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Certifications Section */}
@@ -113,7 +113,7 @@ const Education = () => {
             Certifications
           </h3>
 
-          <div className="space-y-6">
+          <div className="grid lg:grid-cols-2 gap-12">
             {certifications.map((cert, index) => (
               <div
                 key={index}

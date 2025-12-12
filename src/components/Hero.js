@@ -13,19 +13,19 @@ const Hero = () => {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
             Hi, I'm <span className="text-primary">{personalInfo.name}</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-700 mb-8">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-700 mb-4">
             {personalInfo.title}
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto">
             {personalInfo.subtitle}
           </p>
-          <p className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-500 mb-8 max-w-2xl mx-auto">
             {personalInfo.experience}
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <a href="#contact" className="btn-primary">
-              Get In Touch
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <a href="#skills" className="btn-secondary">
+              View Skills
             </a>
             <a href="#projects" className="btn-secondary">
               View Projects

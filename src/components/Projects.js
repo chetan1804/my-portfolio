@@ -112,25 +112,6 @@ const Projects = () => {
           </div>
         ))}
       </div>
-
-      {/* Project Stats */}
-      <div className="mt-16 grid md:grid-cols-3 gap-8">
-        <div className="card text-center bg-white">
-          <div className="text-4xl mb-3">💼</div>
-          <p className="text-3xl font-bold text-primary mb-2">5+</p>
-          <p className="text-gray-600 font-medium">Major Projects</p>
-        </div>
-        <div className="card text-center bg-white">
-          <div className="text-4xl mb-3">⚛️</div>
-          <p className="text-3xl font-bold text-primary mb-2">React</p>
-          <p className="text-gray-600 font-medium">Specialized Framework</p>
-        </div>
-        <div className="card text-center bg-white">
-          <div className="text-4xl mb-3">🚀</div>
-          <p className="text-3xl font-bold text-primary mb-2">85%</p>
-          <p className="text-gray-600 font-medium">Performance Improvement</p>
-        </div>
-      </div>
     </section>
   );
 };

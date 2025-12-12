@@ -99,26 +99,6 @@ const Experience = () => {
           </div>
         ))}
       </div>
-
-      {/* Experience Summary */}
-      <div className="mt-16 grid md:grid-cols-4 gap-6">
-        <div className="card text-center bg-gradient-to-br from-blue-50 to-blue-100">
-          <p className="text-4xl font-bold text-primary mb-2">10+</p>
-          <p className="text-gray-600 font-medium">Years of Experience</p>
-        </div>
-        <div className="card text-center bg-gradient-to-br from-purple-50 to-purple-100">
-          <p className="text-4xl font-bold text-primary mb-2">400+</p>
-          <p className="text-gray-600 font-medium">Websites Managed</p>
-        </div>
-        <div className="card text-center bg-gradient-to-br from-pink-50 to-pink-100">
-          <p className="text-4xl font-bold text-primary mb-2">100K+</p>
-          <p className="text-gray-600 font-medium">Products Managed</p>
-        </div>
-        <div className="card text-center bg-gradient-to-br from-indigo-50 to-indigo-100">
-          <p className="text-4xl font-bold text-primary mb-2">360+</p>
-          <p className="text-gray-600 font-medium">Plugin Deployments</p>
-        </div>
-      </div>
     </section>
   );
 };
