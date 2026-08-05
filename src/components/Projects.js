@@ -7,6 +7,7 @@ const Projects = () => {
 
   const filters = [
     { label: "All Projects", value: "all" },
+    { label: "AI / GenAI", value: "ai" },
     { label: "React.js", value: "react" },
     { label: "WordPress", value: "wordpress" },
   ];
@@ -23,7 +24,7 @@ const Projects = () => {
       </h2>
 
       {/* Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <div className="flex flex-wrap justify-center gap-3 mb-8">
         {filters.map((filter) => (
           <button
             key={filter.value}
@@ -32,19 +33,21 @@ const Projects = () => {
               activeFilter === filter.value
                 ? "bg-primary text-white shadow-lg"
                 : "bg-white text-gray-700 hover:bg-gray-100"
-            }`}>
+            }`}
+          >
             {filter.label}
           </button>
         ))}
       </div>
 
       {/* Projects Grid */}
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-6">
         {filteredProjects.map((project, index) => (
           <div
             key={index}
             className="card group hover:scale-105 transition-transform duration-300 animate-slide-up"
-            style={{ animationDelay: `${index * 0.1}s` }}>
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
             <div className="mb-4">
               <div className="flex items-start justify-between mb-3">
                 <h3 className="text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors">
@@ -54,7 +57,8 @@ const Projects = () => {
                   className="w-6 h-6 text-primary"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24">
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -68,7 +72,8 @@ const Projects = () => {
                 {project.tech.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-3 py-1 bg-blue-50 text-primary rounded-full text-sm font-medium">
+                    className="px-3 py-1 bg-blue-50 text-primary rounded-full text-sm font-medium"
+                  >
                     {tech}
                   </span>
                 ))}
@@ -93,11 +98,13 @@ const Projects = () => {
                 {project.features.map((feature, fIndex) => (
                   <li
                     key={fIndex}
-                    className="flex items-start text-gray-600 text-sm">
+                    className="flex items-start text-gray-600 text-sm"
+                  >
                     <svg
                       className="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0"
                       fill="currentColor"
-                      viewBox="0 0 20 20">
+                      viewBox="0 0 20 20"
+                    >
                       <path
                         fillRule="evenodd"
                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"

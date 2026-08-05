@@ -34,7 +34,8 @@ const Footer = () => {
           className="w-6 h-6"
           fill="none"
           stroke="currentColor"
-          viewBox="0 0 24 24">
+          viewBox="0 0 24 24"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -60,10 +61,10 @@ const Footer = () => {
               Chetan Shinde
             </h3>
             <p className="text-gray-400 leading-relaxed mb-4">
-              Senior Software Engineer with 10+ years of experience specializing
-              in React.js, WordPress, and full-stack development. Building
-              scalable web applications and delivering high-performance
-              solutions.
+              AI Engineer focused on generative AI, agentic AI, RAG, LLM-powered
+              product engineering, FastAPI services, and scalable data-driven
+              experiences. Bridging product design, Python APIs, and modern AI
+              delivery.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -73,7 +74,8 @@ const Footer = () => {
                   target={social.href.startsWith("http") ? "_blank" : "_self"}
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-primary transition-colors duration-300"
-                  aria-label={social.name}>
+                  aria-label={social.name}
+                >
                   {social.icon}
                 </a>
               ))}
@@ -88,7 +90,8 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-primary transition-colors duration-300">
+                    className="text-gray-400 hover:text-primary transition-colors duration-300"
+                  >
                     {link.name}
                   </a>
                 </li>
@@ -105,7 +108,8 @@ const Footer = () => {
                   className="w-5 h-5 mr-2 mt-1 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24">
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -115,7 +119,8 @@ const Footer = () => {
                 </svg>
                 <a
                   href="mailto:chetanshinde265@gmail.com"
-                  className="hover:text-primary transition-colors">
+                  className="hover:text-primary transition-colors"
+                >
                   chetanshinde265@gmail.com
                 </a>
               </li>
@@ -124,7 +129,8 @@ const Footer = () => {
                   className="w-5 h-5 mr-2 mt-1 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24">
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -134,7 +140,8 @@ const Footer = () => {
                 </svg>
                 <a
                   href="tel:+919766363775"
-                  className="hover:text-primary transition-colors">
+                  className="hover:text-primary transition-colors"
+                >
                   +91 9766363775
                 </a>
               </li>
@@ -143,7 +150,8 @@ const Footer = () => {
                   className="w-5 h-5 mr-2 mt-1 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24">
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -176,13 +184,15 @@ const Footer = () => {
             <button
               onClick={scrollToTop}
               className="flex items-center text-gray-400 hover:text-primary transition-colors duration-300"
-              aria-label="Scroll to top">
+              aria-label="Scroll to top"
+            >
               <span className="mr-2">Back to Top</span>
               <svg
                 className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
