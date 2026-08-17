@@ -64,7 +64,7 @@ const Hero = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto text-gray-600">
-            {heroStats.map((stat, index) => (
+            {heroStats.map((stat) => (
               <div
                 key={stat.label}
                 className="glass-card hover:-translate-y-1 transition-transform duration-300"
