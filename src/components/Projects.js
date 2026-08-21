@@ -58,15 +58,17 @@ const FeaturedProject = ({ project }) => (
             {project.description}
           </p>
         </div>
-        <a
-          href={project.repository}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-lg border border-white/30 bg-white/10 px-4 py-2.5 font-semibold hover:bg-white hover:text-blue-950 transition-colors"
-        >
-          View source
-          <span aria-hidden="true">↗</span>
-        </a>
+        {project.repository && (
+          <a
+            href={project.repository}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-lg border border-white/30 bg-white/10 px-4 py-2.5 font-semibold hover:bg-white hover:text-blue-950 transition-colors"
+          >
+            View source
+            <span aria-hidden="true">↗</span>
+          </a>
+        )}
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-8">
@@ -106,9 +108,21 @@ const FeaturedProject = ({ project }) => (
       <DetailList title="Product Scope & Key Capabilities" items={project.features} />
 
       <div className="grid xl:grid-cols-3 gap-5">
-        <DetailList title="Accuracy & AI Reliability" items={project.accuracy} tone="green" />
-        <DetailList title="Engineering Improvements" items={project.improvements} tone="purple" />
-        <DetailList title="Production Observability" items={project.observability} tone="blue" />
+        <DetailList
+          title={project.accuracyTitle || "Accuracy & AI Reliability"}
+          items={project.accuracy}
+          tone="green"
+        />
+        <DetailList
+          title={project.improvementsTitle || "Engineering Improvements"}
+          items={project.improvements}
+          tone="purple"
+        />
+        <DetailList
+          title={project.observabilityTitle || "Production Observability"}
+          items={project.observability}
+          tone="blue"
+        />
       </div>
     </div>
   </article>
